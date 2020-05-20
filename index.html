@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>明月的小世界</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+				<br />
+				<br />
+				<div class="keyword">&nbsp;&nbsp;&nbsp;&nbsp;<br />你是晚风渐息<br />星河若隐一场小别离<br />你是破晓清晨<br />灿烂眼中的光景<br />你是时光轻轻哼唱<br />宛若星辉铺满小巷</div><br /><br  /><br /><br  /><br />
+				<div class="keyword">&nbsp;&nbsp;&nbsp;&nbsp;<br />我瞧那些侠士一个个拂袖打马走天涯<br />于是我披好了衣买好了马<br />却转身瞧见了你<br />心里哪还有什么天涯</div>
+				
+				
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						宝贝，我们已经相恋了
+						<div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+						&nbsp;&nbsp;&nbsp;&nbsp;520快乐呀<br/>
+						<div class="signature">爱你的夫君君</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="copyright">
+			 <a href='http://www.miibeian.gov.cn' target='_blank'>粤ICP备16108165号-1</a> Copyright © 2016   2016-2020
+		</div>
+	</div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2016, 0,258);
+		together.setHours(0);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+</body>
+</html>
